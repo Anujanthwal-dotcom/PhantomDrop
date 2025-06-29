@@ -115,9 +115,7 @@ pnpm build
 ---
 
 ## 📸 Demo
-
-*Coming soon…*
-
+https://phantomdrop.vercel.app
 ---
 
 ## 🧠 Future Plans
