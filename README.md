@@ -112,11 +112,10 @@ cd frontend
 pnpm build
 ```
 
----
 
 ## 📸 Demo
 https://phantomdrop.vercel.app
----
+
 
 ## 🧠 Future Plans
 
