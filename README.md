@@ -7,6 +7,9 @@
 **PhantomDrop** is a secure, code-based file sharing application built with the MERN stack (MongoDB, Express, React, Node.js + TypeScript). It allows users to upload files and share them via a one-time code. All files are stored in encrypted form and self-destruct either after 10 minutes or immediately after download.
 
 ---
+## 📸 Demo
+https://phantomdrop.vercel.app
+
 
 ## 🔐 Features
 
@@ -112,11 +115,6 @@ pnpm build
 cd frontend
 pnpm build
 ```
-
-
-## 📸 Demo
-https://phantomdrop.vercel.app
-
 
 ## 🧠 Future Plans
 
