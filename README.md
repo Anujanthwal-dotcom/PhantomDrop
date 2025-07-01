@@ -2,6 +2,7 @@
 ---
 
 # 🚀 PhantomDrop
+![Screenshot from 2025-07-01 08-37-22](https://github.com/user-attachments/assets/755fe0a5-2fe9-4145-992c-274a9a1c19e0)
 
 **PhantomDrop** is a secure, code-based file sharing application built with the MERN stack (MongoDB, Express, React, Node.js + TypeScript). It allows users to upload files and share them via a one-time code. All files are stored in encrypted form and self-destruct either after 10 minutes or immediately after download.
 
