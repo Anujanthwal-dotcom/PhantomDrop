@@ -21,22 +21,22 @@ function MainSection() {
             setTimeout(() => {
                 setIndex((prev) => (prev + 1) % words.length);
                 setFade(true);
-            }, 500); // match the transition duration
-        }, 3000); // total duration per word
+            }, 500); 
+        }, 3000); 
 
         return () => clearInterval(interval);
     }, []);
 
     return (
         <div className="relative min-h-screen bg-neutral-950 text-neutral-100 px-4 flex flex-col items-center justify-center relative overflow-hidden font-sans">
-            {/* Soft Gradient Background */}
+            
             <div className="absolute inset-0 bg-gradient-to-br from-black via-neutral-900 to-zinc-900 opacity-95 -z-10" />
 
-            {/* Animated Background Blobs */}
+            
             <div className="absolute w-96 h-96 bg-purple-600 opacity-20 rounded-full top-[10%] left-[15%] blur-3xl animate-pulse-slow -z-10" />
             <div className="absolute w-96 h-96 bg-pink-600 opacity-20 rounded-full bottom-[10%] right-[15%] blur-3xl animate-pulse-slower -z-10" />
 
-            {/* Logo */}
+            
             <div className="mb-2 flex justify-center w-full">
                 <img
                     src={Logo}
@@ -45,7 +45,6 @@ function MainSection() {
                 />
             </div>
 
-            {/* Brand Name */}
             <h2 className="text-3xl font-bold bg-gradient-to-r from-cyan-400 via-pink-400 to-purple-500 text-transparent bg-clip-text mb-6 tracking-tight animate-fade-in">
                 PhantomDrop
             </h2>
@@ -61,7 +60,6 @@ function MainSection() {
             </div>
 
 
-            {/* Heading */}
             <h1 className="text-4xl md:text-6xl font-semibold text-center leading-tight tracking-tight animate-fade-in delay-100">
                 Transfer files with <span className="text-white">ease</span> &{' '}
                 <span
@@ -72,12 +70,10 @@ function MainSection() {
                 </span>
             </h1>
 
-            {/* Subheading */}
             <p className="mt-4 text-center text-neutral-400 text-lg md:text-xl max-w-xl animate-fade-in delay-200">
                 A blazing fast centralized file sharing platform built for the modern web.
             </p>
 
-            {/* CTA Buttons */}
             <div className="mt-20 flex flex-wrap justify-center gap-6 w-full animate-fade-in delay-300">
                 <div className="w-full max-w-2xl flex flex-col md:flex-row justify-between gap-4">
                     <button
@@ -95,7 +91,6 @@ function MainSection() {
                 </div>
             </div>
 
-            {/* Keyframe animations */}
             <style>{`
                 @keyframes float {
                     0%, 100% { transform: translateY(0); }

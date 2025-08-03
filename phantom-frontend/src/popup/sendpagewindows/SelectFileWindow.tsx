@@ -14,29 +14,28 @@ function SelectFileWindow() {
     const [sending, setSending] = useState<boolean>(false);
     const dispatch = useDispatch();
     const navigate = useNavigate();
-    // When visibility changes to false, wait for animation then remove from state
     const handleClose = (): void => {
         setIsVisible(false);
         setTimeout(() => {
             dispatch(setSendDeactive(false));
 
-        }, 300); // Match fade-out duration
+        }, 300); 
     };
 
     const handleSend = async () => {
         setSending(true)
         const formData = new FormData();
         formData.append('file', file);
-        //post request
+        
         try {
             const response = await axios.post(`${BASE}/upload`, formData)
-            //set the code value from redux
+            
             if (response !== null) {
                 const code = response.data.code;
                 console.log(typeof code);
                 setSending(false);
                 setFile(null); // Clear the file after sending
-                //navigate to code window
+                
 
                 dispatch(setCode(code));
 

@@ -8,7 +8,7 @@ import { useLocation } from "react-router-dom";
 function CodeWindow() {
     const code: string | null = useLocation().state?.code;
     const dispatch = useDispatch();
-    const [isVisible, setIsVisible] = useState(true); // For triggering fade-out
+    const [isVisible, setIsVisible] = useState(true); 
     const navigate = useNavigate();
     const handleClose = () => {
         setIsVisible(false);
@@ -17,7 +17,7 @@ function CodeWindow() {
             dispatch(removeCode(null));
             dispatch(removeFile(null));
             navigate("/");
-        }, 300); // Match fade-out duration
+        }, 300); 
     };
     console.log("CodeWindow rendered with code:", code);
     return (
@@ -30,7 +30,7 @@ function CodeWindow() {
                         <div className="text-base font-mono text-white/80 flex justify-center">This code will expire in 10 minutes</div>
                     </span>
                     <span className="text-base font-mono text-white/80 break-all">
-                        {/* code */}
+                        
                         {
                             (code !== null) ?
                                 (<div>

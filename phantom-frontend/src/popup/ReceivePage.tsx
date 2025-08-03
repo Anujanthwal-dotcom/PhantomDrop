@@ -12,7 +12,7 @@ function ReceivePage() {
     setIsVisible(false);
     setTimeout(() => {
       dispatch(setReceiveDeactive(false));
-    }, 300); // Match transition duration
+    }, 300); 
   };
 
   const handleReceive = async () => {
@@ -23,15 +23,15 @@ function ReceivePage() {
     const code = codeArray.join('');
 
     try {
-      // Call your API or service to handle the received code
+      
       const response = await axios.get(`${BASE}/download/${code}`, {
-        responseType: 'blob', // 👈 VERY IMPORTANT
+        responseType: 'blob', 
       });
 
       console.log(response)
-      // Create a blob URL
+      
       const url = window.URL.createObjectURL(new Blob([response.data]));
-      // Try to get filename from headers
+      
       const contentDisposition = response.headers['content-disposition'];
       let fileName = "downloaded_file";
 
@@ -43,14 +43,14 @@ function ReceivePage() {
       }
 
 
-      // Create anchor element to trigger download
+      
       const link = document.createElement('a');
       link.href = url;
       link.setAttribute('download', fileName); // trigger download
       document.body.appendChild(link);
       link.click();
 
-      // Cleanup
+      
       link.remove();
       window.URL.revokeObjectURL(url);
     } catch (error) {
@@ -71,7 +71,7 @@ function ReceivePage() {
           Enter 8-Digit Code
         </h2>
 
-        {/* 8 Digit Input Boxes */}
+        
         <div className="flex justify-between gap-2 mb-8 px-2">
           {[...Array(8)].map((_, idx) => (
             <input
@@ -95,7 +95,7 @@ function ReceivePage() {
           ))}
         </div>
 
-        {/* Action Buttons */}
+        
         <div className="flex justify-between">
           <button
             onClick={handleClose}
