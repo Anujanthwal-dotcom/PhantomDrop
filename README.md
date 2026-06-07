@@ -1,15 +1,16 @@
-<pre align="center">
+<p align="center">
+  <pre>
 ██████╗ ██╗  ██╗ █████╗ ███╗   ██╗████████╗ ██████╗ ███╗   ███╗    ██████╗ ██████╗  ██████╗ ██████╗
 ██╔══██╗██║  ██║██╔══██╗████╗  ██║╚══██╔══╝██╔═══██╗████╗ ████║    ██╔══██╗██╔══██╗██╔═══██╗██╔══██╗
 ██████╔╝███████║███████║██╔██╗ ██║   ██║   ██║   ██║██╔████╔██║    ██║  ██║██████╔╝██║   ██║██████╔╝
 ██╔═══╝ ██╔══██║██╔══██║██║╚██╗██║   ██║   ██║   ██║██║╚██╔╝██║    ██║  ██║██╔══██╗██║   ██║██╔═══╝
 ██║     ██║  ██║██║  ██║██║ ╚████║   ██║   ╚██████╔╝██║ ╚═╝ ██║    ██████╔╝██║  ██║╚██████╔╝██║
 ╚═╝     ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝   ╚═╝    ╚═════╝ ╚═╝     ╚═╝    ╚═════╝ ╚═╝  ╚═╝ ╚═════╝ ╚═╝
-</pre>
-
-<p align="center">
+  </pre>
+  <br>
   <b>Share files that vanish into thin air.</b><br>
-  <i>Upload → Get an 8-digit code → Share → <b>Poof!</b> Gone after download or 10 minutes.</i><br><br>
+  <i>Upload → Get an 8-digit code → Share → <b>Poof!</b> Gone after download or 10 minutes.</i>
+  <br><br>
   <code>AES-256-CBC</code> encrypted · <code>MERN</code> + <code>TypeScript</code>
 </p>
 
