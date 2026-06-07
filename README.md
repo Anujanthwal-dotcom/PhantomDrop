@@ -1,4 +1,17 @@
-**PhantomDrop** — Share files that vanish into thin air. Upload, get a one-time 8-digit code, share it. File self-destructs after download or 10 minutes. AES-256-CBC encrypted at rest. MERN + TypeScript.
+<pre align="center">
+██████╗ ██╗  ██╗ █████╗ ███╗   ██╗████████╗ ██████╗ ███╗   ███╗    ██████╗ ██████╗  ██████╗ ██████╗
+██╔══██╗██║  ██║██╔══██╗████╗  ██║╚══██╔══╝██╔═══██╗████╗ ████║    ██╔══██╗██╔══██╗██╔═══██╗██╔══██╗
+██████╔╝███████║███████║██╔██╗ ██║   ██║   ██║   ██║██╔████╔██║    ██║  ██║██████╔╝██║   ██║██████╔╝
+██╔═══╝ ██╔══██║██╔══██║██║╚██╗██║   ██║   ██║   ██║██║╚██╔╝██║    ██║  ██║██╔══██╗██║   ██║██╔═══╝
+██║     ██║  ██║██║  ██║██║ ╚████║   ██║   ╚██████╔╝██║ ╚═╝ ██║    ██████╔╝██║  ██║╚██████╔╝██║
+╚═╝     ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝   ╚═╝    ╚═════╝ ╚═╝     ╚═╝    ╚═════╝ ╚═╝  ╚═╝ ╚═════╝ ╚═╝
+</pre>
+
+<p align="center">
+  <b>Share files that vanish into thin air.</b><br>
+  <i>Upload → Get an 8-digit code → Share → <b>Poof!</b> Gone after download or 10 minutes.</i><br><br>
+  <code>AES-256-CBC</code> encrypted · <code>MERN</code> + <code>TypeScript</code>
+</p>
 
 ## Features
 
