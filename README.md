@@ -1,14 +1,20 @@
-
-╔══════════════════════════════════════════════════════════════════╗
-║    ____  _           _              ____                        ║
-║   |  _ \| |__  _ __ | |_ ___ _ __  |  _ \ _ __ ___   ___  ___  ║
-║   | |_) | '_ \| '_ \| __/ _ \ '_ \ | | | | '__/ _ \ / _ \/ __| ║
-║   |  __/| | | | | | | ||  __/ | | || |_| | | | (_) | (_) \__ \ ║
-║   |_|   |_| |_|_| |_|\__\___|_| |_||____/|_|  \___/ \___/|___/ ║
-║                                                                  ║
-║   🕵️  Share files that vanish into thin air.                    ║
-║   One code. One download. 10 minutes. Then poof. 💨              ║
-╚══════════════════════════════════════════════════════════════════╝
+<table align="center" style="border-collapse: collapse; margin: 20px auto; background: #0d0d1a; border: 1px solid #333366; border-radius: 12px; overflow: hidden; box-shadow: 0 0 30px rgba(60, 60, 140, 0.2);">
+  <tr>
+    <td align="center" style="padding: 16px 32px 4px; font-family: 'Courier New', monospace; color: #8888dd; line-height: 1.3; font-size: 13px; white-space: pre;">
+    ____  _           _              ____
+   |  _ \| |__  _ __ | |_ ___ _ __  |  _ \ _ __ ___   ___  ___
+   | |_) | '_ \| '_ \| __/ _ \ '_ \ | | | | '__/ _ \ / _ \/ __|
+   |  __/| | | | | | | ||  __/ | | || |_| | | | (_) | (_) \__ \
+   |_|   |_| |_|_| |_|\__\___|_| |_||____/|_|  \___/ \___/|___/
+    </td>
+  </tr>
+  <tr>
+    <td align="center" style="padding: 0 32px 8px; font-size: 14px; letter-spacing: 0.5px;">
+      <span style="color: #aaaae0;">🕵️ Share files that vanish into thin air.</span><br>
+      <span style="color: #7777aa; font-size: 12px;">One code. One download. 10 minutes. Then poof. 💨</span>
+    </td>
+  </tr>
+</table>
 
 ---
 
