@@ -1,55 +1,64 @@
 
----
-
-# 🚀 PhantomDrop
-
-**PhantomDrop** is a secure, code-based file sharing application built with the MERN stack (MongoDB, Express, React, Node.js + TypeScript). It allows users to upload files and share them via a one-time code. All files are stored in encrypted form and self-destruct either after 10 minutes or immediately after download.
-
----
-
-## 🔐 Features
-
-* ⚡ **Code-based Sharing** — Share files using an auto-generated secure code.
-* 🔒 **Encrypted Storage** — Files are encrypted before storage for maximum security.
-* 🕒 **10-Minute Expiry** — Files are automatically deleted after 10 minutes.
-* 💣 **One-time Download** — Files are deleted immediately after a successful download.
-* ⚛️ **Frontend** — Built with React + Vite + TailwindCSS.
-* 🛠️ **Backend** — Built with Express.js + TypeScript + MongoDB.
+╔══════════════════════════════════════════════════════════════════╗
+║    ____  _           _              ____                        ║
+║   |  _ \| |__  _ __ | |_ ___ _ __  |  _ \ _ __ ___   ___  ___  ║
+║   | |_) | '_ \| '_ \| __/ _ \ '_ \ | | | | '__/ _ \ / _ \/ __| ║
+║   |  __/| | | | | | | ||  __/ | | || |_| | | | (_) | (_) \__ \ ║
+║   |_|   |_| |_|_| |_|\__\___|_| |_||____/|_|  \___/ \___/|___/ ║
+║                                                                  ║
+║   🕵️  Share files that vanish into thin air.                    ║
+║   One code. One download. 10 minutes. Then poof. 💨              ║
+╚══════════════════════════════════════════════════════════════════╝
 
 ---
 
-## 🖥️ Tech Stack
+**PhantomDrop** is a secure, code-based file sharing app. Upload a file, get a one-time 8-digit code, share it — and the file self-destructs after download or 10 minutes. Files are encrypted at rest with **AES-256-CBC**. No trace. No clutter. Just pure, ephemeral sharing.
 
-### Frontend
-
-* **React 19**
-* **Redux Toolkit**
-* **React Router DOM**
-* **TailwindCSS**
-* **Vite**
-
-### Backend
-
-* **Express 5**
-* **MongoDB with Mongoose**
-* **TypeScript**
-* **Multer (for file handling)**
-* **NanoID (for code generation)**
-* **Rate Limiter & CORS**
+> 🧠 Built with the **MERN stack** (MongoDB, Express, React, Node.js) + **TypeScript** end-to-end.
 
 ---
 
-## 📁 Project Structure
+## ✨ Features
+
+| What | How |
+|---|---|
+| **Code-based sharing** | Upload → get an 8-digit NanoID code → share it |
+| **Encrypted storage** | AES-256-CBC encryption before anything touches disk |
+| **Self-destruct** | Files vanish after 10 min **or** right after first download |
+| **Rate-limited downloads** | 5 requests per 2 min per IP — keeps things fair |
+| **Dark & sleek UI** | React + TailwindCSS with a moody, modern vibe |
+
+---
+
+## 🗺️ Project Layout
 
 ```
-phantomdrop/
-├── frontend/           # React + Vite client
+phantom-drop/
+│
+├── phantom-backend/           # Express + TypeScript API server
 │   ├── src/
-│   ├── public/
+│   │   ├── index.ts           # Server entry point
+│   │   ├── connections/       # MongoDB connection
+│   │   ├── controllers/       # Upload & download logic
+│   │   ├── middlewares/       # Multer upload & rate limiter
+│   │   ├── models/            # Mongoose schemas (File, Code)
+│   │   └── services/          # Encryption, DB operations
+│   ├── encrypted/             # Encrypted file storage
+│   ├── uploads/               # Temp upload directory
+│   └── .env                   # Config (PORT, MONGO_URI, keys)
+│
+├── phantom-frontend/          # React + Vite client
+│   ├── src/
+│   │   ├── mainsection/       # Main UI with Send/Receive modals
+│   │   ├── popup/             # Send flow (SelectFile → Code)
+│   │   │   └── sendpagewindows/
+│   │   ├── redux/             # Redux Toolkit store & slices
+│   │   ├── types/             # TypeScript type definitions
+│   │   ├── assets/            # Logo & static assets
+│   │   └── baseurl/           # API base URL config
 │   └── vite.config.ts
-├── backend/            # Express + TypeScript API
-│   ├── src/
-│   └── .env
+│
+└── README.md                  # You are here 🌟
 ```
 
 ---
@@ -58,77 +67,93 @@ phantomdrop/
 
 ### Prerequisites
 
-* Node.js ≥ 18
-* MongoDB running locally or cloud URI
-* pnpm / npm / yarn
+- **Node.js** ≥ 18
+- **MongoDB** (local or Atlas)
+- **pnpm** (or npm / yarn)
 
-### Clone the repository
+### Clone & Install
 
 ```bash
 git clone https://github.com/your-username/phantomdrop.git
-cd phantomdrop
+cd phantom-drop
 ```
 
-### 🧩 Backend Setup
+### 🔧 Backend
 
 ```bash
-cd backend
+cd phantom-backend
 pnpm install
-cp .env.example .env  # Fill in your Mongo URI and encryption secret
-pnpm dev              # Start development server with nodemon
+cp .env.example .env   # edit with your Mongo URI & encryption keys
+pnpm dev               # starts on http://localhost:3000
 ```
 
-### 🌐 Frontend Setup
+### 🌐 Frontend
 
 ```bash
-cd frontend
+cd phantom-frontend
 pnpm install
-pnpm dev              # Starts Vite dev server
+pnpm dev               # starts on http://localhost:5173
 ```
 
 ---
 
 ## ⚙️ Environment Variables
 
-### Backend `.env`
-
-```env
-PORT=5000
-MONGO_URI=your_mongo_connection_string
-ENCRYPTION_KEY=your_32_byte_encryption_key
-```
+| Variable | Description | Default |
+|---|---|---|
+| `PORT` | Server port | `3000` |
+| `MONGO_URI` | MongoDB connection string | `mongodb://localhost:27017/phantomdrop` |
+| `ENCRYPTION_KEY` | 32-byte key for AES-256-CBC | *(set in .env)* |
+| `ENCRYPTION_IV` | 16-byte IV for AES-256-CBC | *(set in .env)* |
+| `STORAGE_PATH` | Temp upload directory | `uploads` |
+| `ENCRYPTED_STORAGE_PATH` | Encrypted file directory | `encrypted` |
 
 ---
 
-## 📦 Production Build
+## 🧪 How It Works
 
-```bash
-# Build backend
-cd backend
-pnpm build
-
-# Build frontend
-cd frontend
-pnpm build
+```
+                📤 Upload                          📥 Download
+   ┌──────┐              ┌──────────┐              ┌──────┐
+   │ You  │ ── file ──▶  │ Backend  │ ◀── code ──  │ Them │
+   └──────┘              └──────────┘              └──────┘
+                              │
+                    ┌─────────┴─────────┐
+                    ▼                   ▼
+              🔐 Encrypted         🗄️ MongoDB
+              File on Disk       (File + Code docs)
+                                   (TTL: 10 min)
 ```
 
+1. **Upload** → File lands in `uploads/`, gets encrypted → moved to `encrypted/`, original deleted.
+2. **Code** → A unique 8-digit numeric code is generated and stored in MongoDB with a 10-min TTL.
+3. **Download** → Code is entered → file is decrypted on-the-fly and streamed → code & file records deleted → encrypted file deleted from disk. 💥
+
+---
 
 ## 📸 Demo
-https://phantomdrop.vercel.app
 
+Check out the live demo: [**phantomdrop.vercel.app**](https://phantomdrop.vercel.app)
+
+---
 
 ## 🧠 Future Plans
 
-* Drag and drop upload support
-* Password-protected file codes
-* File size and type limits
-* Progressive Web App (PWA) support
-* Analytics dashboard for admin
+- [ ] Drag & drop upload
+- [ ] Password-protected codes
+- [ ] File size & type limits
+- [ ] PWA support
+- [ ] Admin analytics dashboard
+- [ ] End-to-end encryption
 
 ---
 
 ## 🛡️ License
 
-This project is licensed under the MIT License. See `LICENSE` file for details.
+**MIT** — do whatever you want, just don't blame us if something goes *poof*.
 
 ---
+
+<p align="center">
+  <sub>Made with ☕ and 🧠 by <strong>Anuj Anthwal</strong></sub>
+</p>
